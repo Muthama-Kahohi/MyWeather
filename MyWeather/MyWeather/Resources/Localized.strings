@@ -1,0 +1,9 @@
+/* 
+  Localized.strings
+  MyWeather
+
+  Created by Muthama Kahohi on 06/02/2022.
+  
+*/
+
+"degrees_symbol" = "%@°";
