@@ -9,5 +9,5 @@ import Foundation
 
 struct URLS {
     static let scheme = "https"
-    static let weatherHost = "openweathermap.org"
+    static let weatherHost = "api.openweathermap.org"
 }

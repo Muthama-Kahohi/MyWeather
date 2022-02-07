@@ -12,20 +12,20 @@ class HomeWeatherImageView: UIView {
     // MARK: Properties
     let topLabel = UILabel.createLabel(title: "",
                                        textColor: .white,
-                                       font: .systemFont(ofSize: 70,
+                                       font: .systemFont(ofSize: 50,
                                                          weight: .medium),
                                        textAlignment: .center,
                                        breakMode: .byWordWrapping)
     
     let bottomLabel = UILabel.createLabel(title: "",
                                           textColor: .white,
-                                          font: .systemFont(ofSize: 32,
+                                          font: .systemFont(ofSize: 25,
                                                             weight: .medium),
                                           textAlignment: .center,
                                           breakMode: .byWordWrapping)
     
     let weatherImageView = UIImageView.createImageView(image: nil,
-                                                       contentMode: .scaleAspectFill)
+                                                       contentMode: .scaleAspectFit)
     
     //MARK:- Initializer
     required init?(coder: NSCoder) {
@@ -34,6 +34,7 @@ class HomeWeatherImageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
     }
 }
 
@@ -58,12 +59,12 @@ extension HomeWeatherImageView {
             topLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             bottomLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor,
-                                                  constant: 10),
-            bottomLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+                                             constant: 10),
+            bottomLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
     
-    func configureView(image: UIImage, topLabelText: String, bottomLabelText: String) {
+    func configureView(image: UIImage?, topLabelText: String, bottomLabelText: String) {
         weatherImageView.image = image
         bottomLabel.text = bottomLabelText
         topLabel.text = topLabelText

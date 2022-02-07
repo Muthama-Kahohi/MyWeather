@@ -17,7 +17,7 @@ protocol NetworkRequest {
     
     var url: String { get }
     var method: HTTPMethod { get }
-    var queryItems: [String : String] { get }
+    var queryItems: [String : String] { get set }
     
     func decode(_ data: Data) throws -> Response
 }
@@ -35,11 +35,14 @@ protocol NetworkService {
 
 final class NetworkManager: NetworkService {
     
+    static let shared = NetworkManager()
+    
     func request<Request: NetworkRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) {
         
         guard let url = buildUrl(path: request.url, queryItems: request.queryItems) else {
             return completion(.failure(MyWeatherError.custom(404,  "Unable to Build URL")))
         }
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         
@@ -52,12 +55,12 @@ final class NetworkManager: NetworkService {
                 return completion(.failure(NSError()))
             }
             
-            guard let data = data else {
+            guard let responseData = data else {
                 return completion(.failure(NSError()))
             }
             
             do {
-                try completion(.success(request.decode(data)))
+                try completion(.success(request.decode(responseData)))
             } catch let error as NSError {
                 completion(.failure(error))
             }

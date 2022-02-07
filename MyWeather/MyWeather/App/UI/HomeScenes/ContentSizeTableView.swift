@@ -19,3 +19,20 @@ class ContentSizeTableView: UITableView {
         return CGSize(width: contentSize.width, height: contentSize.height)
     }
 }
+extension UITableView {
+    
+    static func createTable() -> UITableView {
+        
+        let table = UITableView()
+        
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.tableFooterView = UIView()
+        table.separatorStyle = .none
+        table.showsVerticalScrollIndicator = false
+        
+        return table
+    }
+}
+
+
+

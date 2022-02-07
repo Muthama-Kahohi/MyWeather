@@ -9,8 +9,8 @@ import Foundation
 
 struct EndPoints {
 
-    static let currentPath = "current"
-    static let forecastPath = "forecast5"
+    static let currentPath = "/data/2.5/weather"
+    static let forecastPath = "/data/2.5/forecast"
 }
 
 

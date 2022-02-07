@@ -18,11 +18,9 @@ extension UIView {
     }
     
     static func horizontalSeparator() -> UIView {
-        let view = UIView()
+        let view = UIView.createView()
         view.backgroundColor = .white
-        view.heightAnchor.constraint(equalToConstant: 2).isActive = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
+        view.heightAnchor.constraint(equalToConstant: 1).isActive = true        
         return view
     }
 }

@@ -13,8 +13,8 @@ class HomeWeatherTableViewCell: UITableViewCell {
     //MARK: Properties
     let firstLabel = UILabel.createLabel(title: "",
                                          textColor: .white,
-                                         font: .systemFont(ofSize: 20,
-                                                           weight: .medium),
+                                         font: .systemFont(ofSize: 15,
+                                                           weight: .regular),
                                          textAlignment: .center,
                                          breakMode: .byWordWrapping)
     
@@ -23,8 +23,8 @@ class HomeWeatherTableViewCell: UITableViewCell {
     
     let lastLabel = UILabel.createLabel(title: "",
                                         textColor: .white,
-                                        font: .systemFont(ofSize: 20,
-                                                          weight: .medium),
+                                        font: .systemFont(ofSize: 15,
+                                                          weight: .regular),
                                         textAlignment: .center,
                                         breakMode: .byWordWrapping)
     
@@ -32,6 +32,7 @@ class HomeWeatherTableViewCell: UITableViewCell {
     //MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         setupCell()
     }
     
@@ -44,6 +45,8 @@ extension HomeWeatherTableViewCell {
     
     // MARK: Methods
     private func setupCell() {
+        
+        backgroundColor = .clear
         
         [firstLabel, typeimage, lastLabel].forEach {
             contentView.addSubview($0)
@@ -62,10 +65,9 @@ extension HomeWeatherTableViewCell {
         ])
     }
     
-    func configureCell(firstLabelText: String, lastLabelText: String, image: UIImage?, bgColor: UIColor) {
+    func configureCell(firstLabelText: String, lastLabelText: String, image: UIImage?) {
         firstLabel.text = firstLabelText
         lastLabel.text = lastLabelText
         typeimage.image = image
-        backgroundColor = bgColor
     }
 }

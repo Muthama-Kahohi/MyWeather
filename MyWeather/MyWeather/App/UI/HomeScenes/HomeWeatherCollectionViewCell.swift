@@ -12,18 +12,18 @@ class HomeWeatherCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properties
     let topLabel = UILabel.createLabel(title: "",
-                                                textColor: .white,
-                                                font: .systemFont(ofSize: 20,
-                                                                  weight: .medium),
-                                                textAlignment: .center,
-                                                breakMode: .byWordWrapping)
+                                       textColor: .white,
+                                       font: .systemFont(ofSize: 20,
+                                                         weight: .regular),
+                                       textAlignment: .center,
+                                       breakMode: .byWordWrapping)
     
     let bottomLabel = UILabel.createLabel(title: "",
-                                               textColor: .white,
-                                               font: .systemFont(ofSize: 16,
-                                                                 weight: .medium),
-                                               textAlignment: .center,
-                                               breakMode: .byWordWrapping)
+                                          textColor: .white,
+                                          font: .systemFont(ofSize: 16,
+                                                            weight: .regular),
+                                          textAlignment: .center,
+                                          breakMode: .byWordWrapping)
     
     //MARK: Init
     override init(frame: CGRect) {
@@ -48,7 +48,7 @@ extension HomeWeatherCollectionViewCell {
             topLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             bottomLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor,
-                                                  constant: 5),
+                                             constant: 5),
             bottomLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             bottomLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
         ])

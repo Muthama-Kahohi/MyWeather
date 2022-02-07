@@ -1,0 +1,17 @@
+/* 
+  Localized.strings
+  MyWeather
+
+  Created by Muthama Kahohi on 06/02/2022.
+*/
+
+"degrees_symbol" = "%@°";
+"min_text" = "min";
+"max_text" = "max";
+"current_text" = "Current";
+"location_permission_request_title" = "Enable Location Services in the settings so that we ccan give you accurate weather data";
+"settings_title" = "Settings";
+"cancel_title" = "Cancel";
+"error_title" = "Error";
+"done_title" = "Done";
+"try_again_title" = "Try Again";

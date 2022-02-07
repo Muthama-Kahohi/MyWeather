@@ -8,7 +8,6 @@
 import Foundation
 
 enum URLManager {
-    
     case current
     case forecast
 }

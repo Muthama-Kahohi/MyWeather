@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-enum TempType: String {
+enum WeatherType: String {
     case sunny
     case rainy
     case cloudy
 }
 
-extension TempType{
+extension WeatherType{
     
     var image: UIImage? {
         switch self {
@@ -35,6 +35,17 @@ extension TempType{
             return UIColor(hexString: "57575D")
         case .cloudy:
             return UIColor(hexString: "54717A")
+        }
+    }
+    
+    var icon: UIImage? {
+        switch self {
+        case .sunny:
+            return UIImage(systemName: "sun.max")
+        case .rainy:
+            return UIImage(systemName: "cloud.heavyrain")
+        case .cloudy:
+            return UIImage(systemName: "cloud")
         }
     }
 }

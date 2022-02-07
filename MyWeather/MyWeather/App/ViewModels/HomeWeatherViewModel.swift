@@ -6,8 +6,119 @@
 //
 
 import Foundation
+import UIKit
 
-struct HomeWeatherViewModel {
+class HomeWeatherViewModel {
     
-    var repository: WeatherRepository
+    let repository: WeatherRepository
+    var cellModels: [CurentCellModel] = []
+    var forecastCellModels: [ForecastCellModel] = []
+    
+    init(repository: WeatherRepository) {
+        self.repository = repository
+    }
+    
+    func fetchCurrentWeatherData(longitude: String, latitude: String, completion: @escaping (Result<WeatherBannerModel, Error>) -> Void) {
+        repository.fetchCurrentWeatherData(longitude: longitude, latitude: latitude) { [weak self] result in
+            
+            switch result {
+            case .success(let currentWeather):
+                guard let weatherType = self?.returnWeatherType(weatherData: currentWeather.weather) else { return }
+                let weatherBannerModel = WeatherBannerModel(image: weatherType.image,
+                                                            temperature: String(format: "degrees_symbol".localized(), String(currentWeather.main.temp)),
+                                                            main: weatherType.rawValue.uppercased(),
+                                                            bgColor: weatherType.bgColor)
+                
+                self?.setCellModels(currentWeather: currentWeather, weatherType: weatherType)
+                completion(.success(weatherBannerModel))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func returnWeatherType(weatherData: [WeatherData]) -> WeatherType? {
+        
+        var weatherType: WeatherType?
+        
+        guard let weather = weatherData.first else { return .cloudy }
+        let weatherPrefix = weather.main.prefix(1).lowercased()
+        
+        switch weatherPrefix {
+        case WeatherType.sunny.rawValue.prefix(1):
+            weatherType = .sunny
+        case WeatherType.rainy.rawValue.prefix(1):
+            weatherType = .rainy
+        case WeatherType.cloudy.rawValue.prefix(1):
+            weatherType = .cloudy
+        default:
+            return nil
+        }
+        
+        return weatherType
+    }
+    
+    func setCellModels(currentWeather: CurrentWeatherDataResponse, weatherType: WeatherType) {
+        cellModels = [
+            CurentCellModel(topText: String(format: "degrees_symbol".localized(),
+                                            String(currentWeather.main.temp_min)),
+                            bottomText: "min_text".localized(),
+                            bgColor: weatherType.bgColor),
+            
+            CurentCellModel(topText: String(format: "degrees_symbol".localized(),
+                                            String(currentWeather.main.temp)),
+                            bottomText: "current_text".localized(),
+                            bgColor: weatherType.bgColor),
+            
+            CurentCellModel(topText: String(format: "degrees_symbol".localized(),
+                                            String(currentWeather.main.temp_max)),
+                            bottomText:  "max_text".localized(),
+                            bgColor: weatherType.bgColor)
+        ]
+    }
+    
+    func setForecastCellModels(weatherForecastData: [WeatherForecastData]) {
+        
+        forecastCellModels = weatherForecastData.map { currentWeather in
+            guard
+                let weatherType = self.returnWeatherType(weatherData: currentWeather.weather)
+            else { return ForecastCellModel(firstText: "",
+                                            lastText: "",
+                                            icon: nil) }
+            
+            return ForecastCellModel(firstText: currentWeather.dt_txt.convertDateFormat(fromDateFormat: .weatherApiDateFormat,
+                                                                                        toDateFormat: .homeSceneWeatherFormat),
+                                     lastText:  String(format: "degrees_symbol".localized(),
+                                                       String(currentWeather.main.temp)) ,
+                                     icon: weatherType.icon)
+            
+        }
+    }
+    
+    func fetchWeatherForecast(longitude: String, latitude: String, completion: @escaping (Result<WeatherForecastResponse, Error>)-> Void) {
+        repository.fetchWeatherForecast(longitude: longitude, latitude: latitude) { [weak self] result in
+            switch result {
+            case .success(let forecast):
+                self?.setForecastCellModels(weatherForecastData: forecast.list)
+                completion(.success(forecast))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
+struct WeatherBannerModel {
+    let image: UIImage?
+    let temperature, main: String
+    let bgColor: UIColor
+}
+
+struct CurentCellModel {
+    let topText, bottomText: String
+    let bgColor: UIColor
+}
+
+struct ForecastCellModel {
+    let firstText, lastText: String
+    let icon: UIImage?
 }

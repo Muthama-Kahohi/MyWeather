@@ -14,6 +14,7 @@ extension UIImageView {
         let imageView = UIImageView()
         imageView.image = image
         imageView.contentMode = contentMode
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
     }
