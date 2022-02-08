@@ -18,7 +18,8 @@ class WeatherRepository {
         networkManager = NetworkManager.shared
     }
     
-    func fetchCurrentWeatherData(weatherSearch: WeatherSearch, completion: @escaping (Result<CurrentWeatherDataResponse, Error>) -> Void) {
+    func fetchCurrentWeatherData(weatherSearch: WeatherSearch,
+                                 completion: @escaping (Result<CurrentWeatherDataResponse, Error>) -> Void) {
        
         let queryItems = returnWeatherSearchQueryItems(weatherSearch: weatherSearch)
         
@@ -34,7 +35,8 @@ class WeatherRepository {
         }
     }
 
-    func fetchWeatherForecast(weatherSearch: WeatherSearch, completion: @escaping (Result<WeatherForecastResponse, Error>) -> Void) {
+    func fetchWeatherForecast(weatherSearch: WeatherSearch,
+                              completion: @escaping (Result<WeatherForecastResponse, Error>) -> Void) {
         
         let queryItems = returnWeatherSearchQueryItems(weatherSearch: weatherSearch)
         let weatherForecastRequest = WeatherForecastRequest(queryItems: queryItems)

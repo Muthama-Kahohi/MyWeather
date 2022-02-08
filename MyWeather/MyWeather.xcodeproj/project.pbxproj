@@ -13,7 +13,6 @@
 		F11BA78227AFAA270031C17A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BA78027AFAA270031C17A /* Main.storyboard */; };
 		F11BA78427AFAA290031C17A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11BA78327AFAA290031C17A /* Assets.xcassets */; };
 		F11BA78727AFAA290031C17A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BA78527AFAA290031C17A /* LaunchScreen.storyboard */; };
-		F11BA79227AFAA290031C17A /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA79127AFAA290031C17A /* NetworkManagerTests.swift */; };
 		F11BA7B027AFCE140031C17A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7AF27AFCE140031C17A /* Endpoints.swift */; };
 		F11BA7B227AFCE540031C17A /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7B127AFCE540031C17A /* URLS.swift */; };
 		F11BA7B427AFCFF50031C17A /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7B327AFCFF50031C17A /* URLManager.swift */; };
@@ -38,7 +37,6 @@
 		F11BA7E327B01E920031C17A /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7E227B01E920031C17A /* UIScrollViewExtension.swift */; };
 		F11BA7E527B0202E0031C17A /* ContentSizeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7E427B0202E0031C17A /* ContentSizeTableView.swift */; };
 		F11BA7E727B0D75D0031C17A /* HomeWeatherSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7E627B0D75D0031C17A /* HomeWeatherSceneTests.swift */; };
-		F11BA7E927B0D7D80031C17A /* HomeWeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7E827B0D7D80031C17A /* HomeWeatherViewModelTests.swift */; };
 		F11BA7EC27B0D9550031C17A /* CurrentWeatherDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7EB27B0D9550031C17A /* CurrentWeatherDataResponse.swift */; };
 		F11BA7EE27B0F1570031C17A /* WeatherForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7ED27B0F1570031C17A /* WeatherForecastResponse.swift */; };
 		F11BA7F227B0F69D0031C17A /* WeatherForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7F127B0F69D0031C17A /* WeatherForecastData.swift */; };
@@ -87,7 +85,6 @@
 		F11BA78627AFAA290031C17A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F11BA78827AFAA290031C17A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F11BA78D27AFAA290031C17A /* MyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F11BA79127AFAA290031C17A /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		F11BA79727AFAA290031C17A /* MyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BA7AF27AFCE140031C17A /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		F11BA7B127AFCE540031C17A /* URLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
@@ -113,7 +110,6 @@
 		F11BA7E227B01E920031C17A /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		F11BA7E427B0202E0031C17A /* ContentSizeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSizeTableView.swift; sourceTree = "<group>"; };
 		F11BA7E627B0D75D0031C17A /* HomeWeatherSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherSceneTests.swift; sourceTree = "<group>"; };
-		F11BA7E827B0D7D80031C17A /* HomeWeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherViewModelTests.swift; sourceTree = "<group>"; };
 		F11BA7EB27B0D9550031C17A /* CurrentWeatherDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDataResponse.swift; sourceTree = "<group>"; };
 		F11BA7ED27B0F1570031C17A /* WeatherForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastResponse.swift; sourceTree = "<group>"; };
 		F11BA7F127B0F69D0031C17A /* WeatherForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastData.swift; sourceTree = "<group>"; };
@@ -193,9 +189,7 @@
 		F11BA79027AFAA290031C17A /* MyWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				F11BA79127AFAA290031C17A /* NetworkManagerTests.swift */,
 				F11BA7E627B0D75D0031C17A /* HomeWeatherSceneTests.swift */,
-				F11BA7E827B0D7D80031C17A /* HomeWeatherViewModelTests.swift */,
 			);
 			path = MyWeatherTests;
 			sourceTree = "<group>";
@@ -403,7 +397,7 @@
 		F11BA76F27AFAA270031C17A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
@@ -524,9 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F11BA7E927B0D7D80031C17A /* HomeWeatherViewModelTests.swift in Sources */,
 				F11BA7E727B0D75D0031C17A /* HomeWeatherSceneTests.swift in Sources */,
-				F11BA79227AFAA290031C17A /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZH3JSPL75F;
@@ -700,18 +693,22 @@
 				INFOPLIST_FILE = MyWeather/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow Weather App to access your location so as to give you accurate weather forecast";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow Weather App to access your location so as to give you accurate weather forecast";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Allow Weather App to Access your Location to give you more accurate data.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Weather App to Access your Location to give you more accurate data.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dvt.MyWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = dvtweather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -723,6 +720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZH3JSPL75F;
@@ -730,18 +728,22 @@
 				INFOPLIST_FILE = MyWeather/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow Weather App to access your location so as to give you accurate weather forecast";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Allow Weather App to access your location so as to give you accurate weather forecast";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Allow Weather App to Access your Location to give you more accurate data.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Weather App to Access your Location to give you more accurate data.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dvt.MyWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = dvtweather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -753,9 +755,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y29D53TT88;
+				DEVELOPMENT_TEAM = ZH3JSPL75F;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -778,9 +781,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y29D53TT88;
+				DEVELOPMENT_TEAM = ZH3JSPL75F;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

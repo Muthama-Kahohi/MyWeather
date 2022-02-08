@@ -9,7 +9,6 @@ import Foundation
 class RepositoryFactory {
     
     static func weatherRepository() -> WeatherRepository {
-        
         return WeatherRepository()
     }
 }

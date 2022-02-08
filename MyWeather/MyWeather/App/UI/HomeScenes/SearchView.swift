@@ -28,6 +28,11 @@ extension UISearchBar {
         searchBar.searchBarStyle = .minimal
         searchBar.barStyle = .default
         searchBar.barTintColor = .black
+        
+        if #available(iOS 13.0, *) {
+            searchBar.searchBarStyle = .default
+            searchBar.searchTextField.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        }
 
         return searchBar
     }

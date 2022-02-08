@@ -40,7 +40,7 @@ final class NetworkManager: NetworkService {
     func request<Request: NetworkRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) {
         
         guard let url = buildUrl(path: request.url, queryItems: request.queryItems) else {
-            return completion(.failure(MyWeatherError.custom(404,  "Unable to Build URL")))
+            return completion(.failure(MyWeatherError.custom(404,  "url_build_error".localized())))
         }
         
         var urlRequest = URLRequest(url: url)
@@ -54,15 +54,15 @@ final class NetworkManager: NetworkService {
             if let urlResponse = response as? HTTPURLResponse {
                 let code = urlResponse.statusCode
                 guard 200..<300 ~= code else {
-                    return completion(.failure(MyWeatherError.custom(1, "Error Found")))
+                    return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
                 }
                 
             }else {
-                return completion(.failure(MyWeatherError.custom(1, "Error Found")))
+                return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
             }
             
             guard let responseData = data else {
-                return completion(.failure(MyWeatherError.custom(1, "Error Found")))
+                return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
             }
             
             do {

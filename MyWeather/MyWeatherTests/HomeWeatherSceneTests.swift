@@ -22,7 +22,8 @@ class HomeWeatherSceneTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-        
+    func test_viewModel_isNotNil() {
+        sut.viewDidLoad()
+        XCTAssertNotNil(sut.viewModel)
     }
 }

@@ -42,7 +42,20 @@ class HomeWeatherViewModel {
             }
         }
     }
-    
+
+    func fetchWeatherForecast(completion: @escaping (Result<WeatherForecastResponse, Error>)-> Void) {
+        setRepoDetails()
+        repository.fetchWeatherForecast(weatherSearch: weatherSearch) { [weak self] result in
+            switch result {
+            case .success(let forecast):
+                self?.setForecastCellModels(weatherForecastData: forecast.list)
+                completion(.success(forecast))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+        
     func returnWeatherType(weatherData: [WeatherData]) -> WeatherType? {
         
         var weatherType: WeatherType?
@@ -99,19 +112,6 @@ class HomeWeatherViewModel {
                                                        String(currentWeather.main.temp)) ,
                                      icon: weatherType.icon,
                                      iconTint: .white)
-        }
-    }
-    
-    func fetchWeatherForecast(completion: @escaping (Result<WeatherForecastResponse, Error>)-> Void) {
-        setRepoDetails()
-        repository.fetchWeatherForecast(weatherSearch: weatherSearch) { [weak self] result in
-            switch result {
-            case .success(let forecast):
-                self?.setForecastCellModels(weatherForecastData: forecast.list)
-                completion(.success(forecast))
-            case .failure(let error):
-                completion(.failure(error))
-            }
         }
     }
     

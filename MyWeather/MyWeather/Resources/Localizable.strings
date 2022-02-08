@@ -23,3 +23,5 @@
 "success_save" = "Successfully Saved to Favorites";
 "save_text" = "Save";
 "favorite_cities" = "Favorite Cities";
+"url_build_error" = "Unable to Build URL";
+"error_found_text" = "Error Found";

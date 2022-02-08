@@ -49,6 +49,11 @@ class HomeWeatherScene: UIViewController {
         super.viewDidLoad()
         setupScene()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        requestLocationAuthorization()
+    }
 }
 
 extension HomeWeatherScene {
@@ -59,9 +64,6 @@ extension HomeWeatherScene {
         ConfigureTableView()
         configureCollectionView()
         configureSearchBar()
-        self.fetchWeatherData()
-        //        requestLocationAuthorization()
-        //        checkLocationAuthorizationOnLoad()
     }
     
     @objc private func fetchWeatherData() {
@@ -90,6 +92,7 @@ extension HomeWeatherScene {
                         scene.cityLabel.text = ""
                     }
                     scene.cityLabel.isHidden = scene.viewModel.weatherSearch == .myLocation
+                    scene.buttonsStackView.isHidden = false
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -137,6 +140,7 @@ extension HomeWeatherScene {
         
         spinner.isHidden = true
         saveButton.isHidden = true
+        buttonsStackView.isHidden = true
         
         favouritesView.cancelButton.addTarget(self, action: #selector(hideFavoritesView), for: .touchUpInside)
         favouritesView.isHidden = true
@@ -144,6 +148,8 @@ extension HomeWeatherScene {
         viewFavouritesButton.isHidden = viewModel.fetchFavouriteCities().count == 0
         viewFavouritesButton.tintColor = .white
         viewFavouritesButton.addTarget(self, action: #selector(showFavouriteCities), for: .touchUpInside)
+        
+        self.hideKeyboardWhenTapped()
       
         NSLayoutConstraint.activate([
             parentScrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -244,11 +250,11 @@ extension HomeWeatherScene {
         
         switch(CLLocationManager.authorizationStatus()) {
         case .notDetermined, .restricted, .denied:
-            requestAuthorizationAlert()
+            locationManager?.requestAlwaysAuthorization()
         case .authorizedAlways, .authorizedWhenInUse:
             self.fetchWeatherData()
         @unknown default:
-            requestAuthorizationAlert()
+            locationManager?.requestAlwaysAuthorization()
         }
     }
     
@@ -278,14 +284,15 @@ extension HomeWeatherScene {
     private func requestAuthorizationAlert() {
         dismissAlert()
         var alert = GenericAlert(frame: .zero)
-        alert.descriptionLabel.text =  "location_permission_request_title".localized()
+        alert.backgroundColor = .gray
+        alert.descriptionLabel.text = "location_permission_request_title".localized()
         alert.cancelButton.setTitle("cancel_title".localized(), for: .normal)
         alert.doneButton.setTitle("settings_title".localized(), for: .normal)
         
         alert.doneButton.addTarget(self, action: #selector(presentLocationSettings), for: .touchUpInside)
         alert.cancelButton.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         
-        self.presentAlert(alert: &alert, width: 0.9)
+        self.presentAlert(alert: &alert, width: 1.0)
     }
     
     private func successfulFavoriteSaveAlert(message: String) {
@@ -341,6 +348,8 @@ extension HomeWeatherScene {
     @objc private func saveFavouriteCity() {
         self.viewModel.saveCity() { [weak self] message in
             self?.successfulFavoriteSaveAlert(message: message)
+            self?.saveButton.isHidden = true
+            self?.viewFavouritesButton.isHidden = self?.viewModel.fetchFavouriteCities().count == 0
         }
     }
     
@@ -349,6 +358,8 @@ extension HomeWeatherScene {
     }
     
     @objc private func showFavouriteCities() {
+        favouritesView.viewModel?.favorites = viewModel.fetchFavouriteCities()
+        favouritesView.favoritesTable.reloadData()
         favouritesView.isHidden = !favouritesView.isHidden
     }
 }
@@ -418,15 +429,13 @@ extension HomeWeatherScene: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                if CLLocationManager.isRangingAvailable() {}
-            }
-            
+            guard let location = manager.location else { return }
+            viewModel.coordinates = Coordinates(lon: location.coordinate.longitude, lat: location.coordinate.longitude)
             self.fetchWeatherData()
         case .restricted, .denied, .notDetermined:
-            requestAuthorizationAlert()
+            self.requestAuthorizationAlert()
         @unknown default:
-            requestAuthorizationAlert()
+            self.requestAuthorizationAlert()
         }
     }
 }
