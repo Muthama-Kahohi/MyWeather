@@ -11,4 +11,8 @@ class ViewModelFactory {
     static func homeWeather(repository: WeatherRepository) -> HomeWeatherViewModel {
         return HomeWeatherViewModel(repository: repository)
     }
+    
+    static func favorites() -> FavoritesViewModel {
+        return FavoritesViewModel()
+    }
 }

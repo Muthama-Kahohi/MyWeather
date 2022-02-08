@@ -18,5 +18,4 @@ extension UIImageView {
         
         return imageView
     }
-    
 }

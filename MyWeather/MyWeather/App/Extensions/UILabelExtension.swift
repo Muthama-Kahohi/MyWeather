@@ -21,6 +21,7 @@ extension UILabel {
         label.font = font
         label.textAlignment = textAlignment
         label.lineBreakMode = breakMode
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label

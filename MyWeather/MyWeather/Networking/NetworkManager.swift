@@ -51,12 +51,18 @@ final class NetworkManager: NetworkService {
                 return completion(.failure(error))
             }
             
-            guard let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode else {
-                return completion(.failure(NSError()))
+            if let urlResponse = response as? HTTPURLResponse {
+                let code = urlResponse.statusCode
+                guard 200..<300 ~= code else {
+                    return completion(.failure(MyWeatherError.custom(1, "Error Found")))
+                }
+                
+            }else {
+                return completion(.failure(MyWeatherError.custom(1, "Error Found")))
             }
             
             guard let responseData = data else {
-                return completion(.failure(NSError()))
+                return completion(.failure(MyWeatherError.custom(1, "Error Found")))
             }
             
             do {

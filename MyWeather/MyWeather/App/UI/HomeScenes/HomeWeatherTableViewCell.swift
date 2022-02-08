@@ -65,9 +65,10 @@ extension HomeWeatherTableViewCell {
         ])
     }
     
-    func configureCell(firstLabelText: String, lastLabelText: String, image: UIImage?) {
+    func configureCell(firstLabelText: String, lastLabelText: String, image: UIImage?, imageTint: UIColor) {
         firstLabel.text = firstLabelText
         lastLabel.text = lastLabelText
         typeimage.image = image
+        typeimage.tintColor = imageTint
     }
 }

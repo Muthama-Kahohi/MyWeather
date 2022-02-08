@@ -15,3 +15,11 @@
 "error_title" = "Error";
 "done_title" = "Done";
 "try_again_title" = "Try Again";
+"by_location_button_title" = "specific city";
+"my_location_button_title" = "my location";
+"enter_city_text" = "Enter City Name";
+"save_title" = "Save City";
+"save_city_description" = "Would you like to save %@ to favorites";
+"success_save" = "Successfully Saved to Favorites";
+"save_text" = "Save";
+"favorite_cities" = "Favorite Cities";

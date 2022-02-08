@@ -47,6 +47,17 @@
 		F11BA7F927B122150031C17A /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7F827B122150031C17A /* UITableViewCellExtension.swift */; };
 		F11BA7FB27B1225A0031C17A /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7FA27B1225A0031C17A /* UICollectionViewCellExtension.swift */; };
 		F11BA7FD27B19CAF0031C17A /* DateExtension .swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BA7FC27B19CAF0031C17A /* DateExtension .swift */; };
+		F1ABF8C427B22CD600FF7212 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8C327B22CD600FF7212 /* UIButtonExtension.swift */; };
+		F1ABF8C627B2381900FF7212 /* WeatherSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8C527B2381900FF7212 /* WeatherSearch.swift */; };
+		F1ABF8C827B24AAC00FF7212 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8C727B24AAC00FF7212 /* SearchView.swift */; };
+		F1ABF8CA27B25B0100FF7212 /* UIActivityIndicatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8C927B25B0100FF7212 /* UIActivityIndicatorExtension.swift */; };
+		F1ABF8CC27B2679800FF7212 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8CB27B2679800FF7212 /* UIStackViewExtension.swift */; };
+		F1ABF8CE27B277EC00FF7212 /* GenericAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8CD27B277EC00FF7212 /* GenericAlert.swift */; };
+		F1ABF8D227B28B7C00FF7212 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8D127B28B7C00FF7212 /* UserDefaultsWrapper.swift */; };
+		F1ABF8D427B2D4BF00FF7212 /* UIViewContrroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8D327B2D4BF00FF7212 /* UIViewContrroller.swift */; };
+		F1ABF8D627B2D83B00FF7212 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8D527B2D83B00FF7212 /* FavouritesView.swift */; };
+		F1ABF8D827B2E1D200FF7212 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8D727B2E1D200FF7212 /* FavoritesTableViewCell.swift */; };
+		F1ABF8DA27B2E27F00FF7212 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF8D927B2E27F00FF7212 /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +122,17 @@
 		F11BA7F827B122150031C17A /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		F11BA7FA27B1225A0031C17A /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		F11BA7FC27B19CAF0031C17A /* DateExtension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateExtension .swift"; sourceTree = "<group>"; };
+		F1ABF8C327B22CD600FF7212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		F1ABF8C527B2381900FF7212 /* WeatherSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSearch.swift; sourceTree = "<group>"; };
+		F1ABF8C727B24AAC00FF7212 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F1ABF8C927B25B0100FF7212 /* UIActivityIndicatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorExtension.swift; sourceTree = "<group>"; };
+		F1ABF8CB27B2679800FF7212 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		F1ABF8CD27B277EC00FF7212 /* GenericAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlert.swift; sourceTree = "<group>"; };
+		F1ABF8D127B28B7C00FF7212 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		F1ABF8D327B2D4BF00FF7212 /* UIViewContrroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewContrroller.swift; sourceTree = "<group>"; };
+		F1ABF8D527B2D83B00FF7212 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		F1ABF8D727B2E1D200FF7212 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		F1ABF8D927B2E27F00FF7212 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				F11BA7C227AFEB260031C17A /* HomeWeatherViewModel.swift */,
+				F1ABF8D927B2E27F00FF7212 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -272,6 +295,10 @@
 				F11BA7F827B122150031C17A /* UITableViewCellExtension.swift */,
 				F11BA7FA27B1225A0031C17A /* UICollectionViewCellExtension.swift */,
 				F11BA7FC27B19CAF0031C17A /* DateExtension .swift */,
+				F1ABF8C327B22CD600FF7212 /* UIButtonExtension.swift */,
+				F1ABF8C927B25B0100FF7212 /* UIActivityIndicatorExtension.swift */,
+				F1ABF8CB27B2679800FF7212 /* UIStackViewExtension.swift */,
+				F1ABF8D327B2D4BF00FF7212 /* UIViewContrroller.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +312,10 @@
 				F11BA7DA27B006440031C17A /* HomeWeatherTableViewCell.swift */,
 				F11BA7CE27AFF5B00031C17A /* TempType.swift */,
 				F11BA7E427B0202E0031C17A /* ContentSizeTableView.swift */,
+				F1ABF8C727B24AAC00FF7212 /* SearchView.swift */,
+				F1ABF8CD27B277EC00FF7212 /* GenericAlert.swift */,
+				F1ABF8D527B2D83B00FF7212 /* FavouritesView.swift */,
+				F1ABF8D727B2E1D200FF7212 /* FavoritesTableViewCell.swift */,
 			);
 			path = HomeScenes;
 			sourceTree = "<group>";
@@ -295,6 +326,8 @@
 				F11BA7EB27B0D9550031C17A /* CurrentWeatherDataResponse.swift */,
 				F11BA7ED27B0F1570031C17A /* WeatherForecastResponse.swift */,
 				F11BA7F127B0F69D0031C17A /* WeatherForecastData.swift */,
+				F1ABF8C527B2381900FF7212 /* WeatherSearch.swift */,
+				F1ABF8D127B28B7C00FF7212 /* UserDefaultsWrapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -447,10 +480,14 @@
 				F11BA7DD27B00A0F0031C17A /* UIViewExtension.swift in Sources */,
 				F11BA7FD27B19CAF0031C17A /* DateExtension .swift in Sources */,
 				F11BA7CF27AFF5B00031C17A /* TempType.swift in Sources */,
+				F1ABF8CC27B2679800FF7212 /* UIStackViewExtension.swift in Sources */,
+				F1ABF8C427B22CD600FF7212 /* UIButtonExtension.swift in Sources */,
 				F11BA7F727B0F7550031C17A /* WeatherForecastRequest.swift in Sources */,
 				F11BA77F27AFAA270031C17A /* HomeWeatherScene.swift in Sources */,
 				F11BA7E527B0202E0031C17A /* ContentSizeTableView.swift in Sources */,
+				F1ABF8CA27B25B0100FF7212 /* UIActivityIndicatorExtension.swift in Sources */,
 				F11BA7D727AFFF230031C17A /* UICollectionViewExtension.swift in Sources */,
+				F1ABF8D827B2E1D200FF7212 /* FavoritesTableViewCell.swift in Sources */,
 				F11BA7C327AFEB260031C17A /* HomeWeatherViewModel.swift in Sources */,
 				F11BA7D927B000A30031C17A /* HomeWeatherCollectionViewCell.swift in Sources */,
 				F11BA7BE27AFD8F30031C17A /* WeatherRepository.swift in Sources */,
@@ -465,13 +502,20 @@
 				F11BA7F927B122150031C17A /* UITableViewCellExtension.swift in Sources */,
 				F11BA7EE27B0F1570031C17A /* WeatherForecastResponse.swift in Sources */,
 				F11BA7EC27B0D9550031C17A /* CurrentWeatherDataResponse.swift in Sources */,
+				F1ABF8D427B2D4BF00FF7212 /* UIViewContrroller.swift in Sources */,
 				F11BA77D27AFAA270031C17A /* SceneDelegate.swift in Sources */,
 				F11BA7BC27AFD8CE0031C17A /* ViewModelFactory.swift in Sources */,
+				F1ABF8C827B24AAC00FF7212 /* SearchView.swift in Sources */,
 				F11BA7E127B00CD50031C17A /* RepositoryFactory.swift in Sources */,
+				F1ABF8DA27B2E27F00FF7212 /* FavoritesViewModel.swift in Sources */,
+				F1ABF8CE27B277EC00FF7212 /* GenericAlert.swift in Sources */,
 				F11BA7B427AFCFF50031C17A /* URLManager.swift in Sources */,
 				F11BA7B827AFD4A90031C17A /* WeatherResponse.swift in Sources */,
 				F11BA7DB27B006440031C17A /* HomeWeatherTableViewCell.swift in Sources */,
+				F1ABF8D227B28B7C00FF7212 /* UserDefaultsWrapper.swift in Sources */,
 				F11BA7CC27AFF1EE0031C17A /* HomeWeatherImageView.swift in Sources */,
+				F1ABF8C627B2381900FF7212 /* WeatherSearch.swift in Sources */,
+				F1ABF8D627B2D83B00FF7212 /* FavouritesView.swift in Sources */,
 				F11BA7C827AFED070031C17A /* UILabelExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,7 +714,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -700,7 +744,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
