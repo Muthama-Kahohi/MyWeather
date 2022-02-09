@@ -1,0 +1,27 @@
+/* 
+  Localized.strings
+  MyWeather
+
+  Created by Muthama Kahohi on 06/02/2022.
+*/
+
+"degrees_symbol" = "%@°";
+"min_text" = "min";
+"max_text" = "max";
+"current_text" = "Current";
+"location_permission_request_title" = "Enable Location Services in the settings so that we ccan give you accurate weather data";
+"settings_title" = "Settings";
+"cancel_title" = "Cancel";
+"error_title" = "Error";
+"done_title" = "Done";
+"try_again_title" = "Try Again";
+"by_location_button_title" = "specific city";
+"my_location_button_title" = "my location";
+"enter_city_text" = "Enter City Name";
+"save_title" = "Save City";
+"save_city_description" = "Would you like to save %@ to favorites";
+"success_save" = "Successfully Saved to Favorites";
+"save_text" = "Save";
+"favorite_cities" = "Favorite Cities";
+"url_build_error" = "Unable to Build URL";
+"error_found_text" = "Error Found";
