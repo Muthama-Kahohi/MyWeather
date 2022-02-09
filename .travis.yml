@@ -1,3 +1,3 @@
-language: objective-c
+language: swift
 script:
 - fastlane scan
