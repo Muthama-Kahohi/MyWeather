@@ -19,7 +19,6 @@ extension UIActivityIndicatorView {
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         spinner.startAnimating()
-        
         return view
     }
 }

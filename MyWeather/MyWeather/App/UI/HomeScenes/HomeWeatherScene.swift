@@ -430,7 +430,8 @@ extension HomeWeatherScene: CLLocationManagerDelegate {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             guard let location = manager.location else { return }
-            viewModel.coordinates = Coordinates(lon: location.coordinate.longitude, lat: location.coordinate.longitude)
+            viewModel.coordinates = Coordinates(lon: location.coordinate.longitude,
+                                                lat: location.coordinate.longitude)
             self.fetchWeatherData()
         case .restricted, .denied, .notDetermined:
             self.requestAuthorizationAlert()
