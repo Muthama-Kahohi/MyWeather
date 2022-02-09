@@ -20,20 +20,6 @@
                ReferencedContainer = "container:MyWeather.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F11BA79627AFAA290031C17A"
-               BuildableName = "MyWeatherUITests.xctest"
-               BlueprintName = "MyWeatherUITests"
-               ReferencedContainer = "container:MyWeather.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
