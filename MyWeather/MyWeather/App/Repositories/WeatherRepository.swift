@@ -13,18 +13,18 @@ class WeatherRepository {
     private let apiKey: String = "d9d744456c0923d00651e15f22db3cf1"
     var coordinates = Coordinates(lon: 0.0, lat: 0.0)
     var cityName = ""
-
+    
     init() {
         networkManager = NetworkManager.shared
     }
     
     func fetchCurrentWeatherData(weatherSearch: WeatherSearch,
                                  completion: @escaping (Result<CurrentWeatherDataResponse, Error>) -> Void) {
-       
+        
         let queryItems = returnWeatherSearchQueryItems(weatherSearch: weatherSearch)
         
         let currentWeatherRequest =  CurrentWeatherRequest(queryItems: queryItems)
-
+        
         networkManager.request(currentWeatherRequest) { result in
             switch result {
             case .success(let currentWeather):
@@ -34,13 +34,13 @@ class WeatherRepository {
             }
         }
     }
-
+    
     func fetchWeatherForecast(weatherSearch: WeatherSearch,
                               completion: @escaping (Result<WeatherForecastResponse, Error>) -> Void) {
         
         let queryItems = returnWeatherSearchQueryItems(weatherSearch: weatherSearch)
         let weatherForecastRequest = WeatherForecastRequest(queryItems: queryItems)
-
+        
         networkManager.request(weatherForecastRequest) { result in
             switch result {
             case .success(let forecast):
@@ -64,9 +64,8 @@ extension WeatherRepository {
                           "units": "metric"]
         case .otherLocation:
             queryItems = ["q": cityName,
-             "lon": String(coordinates.lon),
-             "appid": apiKey,
-             "units": "metric"]
+                          "appid": apiKey,
+                          "units": "metric"]
         }
         
         return queryItems

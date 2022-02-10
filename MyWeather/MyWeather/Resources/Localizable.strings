@@ -25,3 +25,4 @@
 "favorite_cities" = "Favorite Cities";
 "url_build_error" = "Unable to Build URL";
 "error_found_text" = "Error Found";
+"city_not_found" = "City Not Found";

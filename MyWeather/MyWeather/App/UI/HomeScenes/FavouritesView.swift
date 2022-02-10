@@ -48,6 +48,7 @@ class FavouritesView: UIView{
         backgroundColor = .black
         translatesAutoresizingMaskIntoConstraints = false
         cancelButton.tintColor = .white
+        favoritesTable.backgroundColor = .black
         
         [title, cancelButton, separator, tableStackView].forEach {
             addSubview($0)

@@ -29,7 +29,7 @@ extension NetworkRequest where Response: Decodable {
 }
 
 protocol NetworkService {
-    func request<Request: NetworkRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void)
+    func request<Request: NetworkRequest>(_ request: Request, completion: @escaping (Result<Request.Response, MyWeatherError>) -> Void)
     func buildUrl(path: String, queryItems: [String: String]) -> URL?
 }
 
@@ -37,7 +37,7 @@ final class NetworkManager: NetworkService {
     
     static let shared = NetworkManager()
     
-    func request<Request: NetworkRequest>(_ request: Request, completion: @escaping (Result<Request.Response, Error>) -> Void) {
+    func request<Request: NetworkRequest>(_ request: Request, completion: @escaping (Result<Request.Response, MyWeatherError>) -> Void) {
         
         guard let url = buildUrl(path: request.url, queryItems: request.queryItems) else {
             return completion(.failure(MyWeatherError.custom(404,  "url_build_error".localized())))
@@ -47,17 +47,16 @@ final class NetworkManager: NetworkService {
         urlRequest.httpMethod = request.method.rawValue
         
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                return completion(.failure(error))
+            if let _ = error {
+                return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
             }
-            
+                        
             if let urlResponse = response as? HTTPURLResponse {
                 let code = urlResponse.statusCode
                 guard 200..<300 ~= code else {
                     return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
                 }
-                
-            }else {
+            } else {
                 return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
             }
             
@@ -67,8 +66,8 @@ final class NetworkManager: NetworkService {
             
             do {
                 try completion(.success(request.decode(responseData)))
-            } catch let error as NSError {
-                completion(.failure(error))
+            } catch _ {
+                return completion(.failure(MyWeatherError.custom(1, "error_found_text".localized())))
             }
         }
         .resume()

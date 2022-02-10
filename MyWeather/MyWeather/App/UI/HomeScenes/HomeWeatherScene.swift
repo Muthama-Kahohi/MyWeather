@@ -149,6 +149,8 @@ extension HomeWeatherScene {
         viewFavouritesButton.tintColor = .white
         viewFavouritesButton.addTarget(self, action: #selector(showFavouriteCities), for: .touchUpInside)
         
+        searchBar.textField?.textColor = .white
+        
         self.hideKeyboardWhenTapped()
       
         NSLayoutConstraint.activate([
@@ -236,7 +238,7 @@ extension HomeWeatherScene {
     private func requestLocationAuthorization() {
         locationManager = CLLocationManager()
         locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
+        checkLocationAuthorizationOnLoad()
     }
         
     @objc private func presentLocationSettings() {
@@ -250,11 +252,11 @@ extension HomeWeatherScene {
         
         switch(CLLocationManager.authorizationStatus()) {
         case .notDetermined, .restricted, .denied:
-            locationManager?.requestAlwaysAuthorization()
+            requestAuthorizationAlert()
         case .authorizedAlways, .authorizedWhenInUse:
             self.fetchWeatherData()
         @unknown default:
-            locationManager?.requestAlwaysAuthorization()
+            requestAuthorizationAlert()
         }
     }
     
@@ -434,9 +436,11 @@ extension HomeWeatherScene: CLLocationManagerDelegate {
                                                 lat: location.coordinate.longitude)
             self.fetchWeatherData()
         case .restricted, .denied, .notDetermined:
-            self.requestAuthorizationAlert()
+            viewModel.weatherSearch = .myLocation
+            self.fetchWeatherData()
         @unknown default:
-            self.requestAuthorizationAlert()
+            viewModel.weatherSearch = .myLocation
+            self.fetchWeatherData()
         }
     }
 }
